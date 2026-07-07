@@ -3,79 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tahsin Ahmed | Web Scraping & Automation Expert</title>
+    <title>Tahsin Ahmed | Data Expert</title>
     <style>
+        :root {
+            --bg: #0d1117;
+            --container: #161b22;
+            --accent: #238636; /* GitHub-style green accent */
+            --text-main: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --border: #30363d;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
+
         body {
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: var(--bg);
+            color: var(--text-main);
             line-height: 1.6;
         }
+
         header {
-            background: linear-gradient(135deg, #1f4068, #162447);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
+            background-color: var(--container);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
         header h1 {
-            font-size: 2.5rem;
+            color: var(--text-heading);
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: var(--container);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--text-heading);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 15px;
+            text-align: center;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .project-card h3 {
+            color: var(--text-heading);
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
-        header p {
-            font-size: 1.2rem;
-            color: #e4e4e4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: #1f4068;
-            border-bottom: 2px solid #e4e4e4;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            margin-top: 25px;
-        }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            margin-top: 10px;
-        }
-        .skills-list li {
-            background: #e1e8ef;
-            color: #1f4068;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .project-card {
-            background: #fafafa;
-            border-left: 4px solid #1f4068;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 0 6px 6px 0;
-        }
-        .project-card h3 {
-            color: #162447;
-            margin-bottom: 5px;
-        }
+
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
+            background-color: var(--container);
+            border-top: 1px solid var(--border);
             color: #777;
-            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -83,40 +151,59 @@
 
     <header>
         <h1>Tahsin Ahmed</h1>
-        <p>Python Web Scraping & Data Automation Expert</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <h2>About Me</h2>
-        <p>Hi, I am Tahsin, a Web Scraping and Data Automation Expert. I specialize in Python Web Scraping using BeautifulSoup and Selenium to extract data from any website efficiently. Beyond scraping, I am proficient in MS Excel, allowing me to clean, format, and organize raw data into structured spreadsheets. Quality work and client satisfaction are my top priorities.</p>
+    <div class="main-container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hey there! I'm Tahsin, a passionate Data Expert based in Bangladesh. My goal is to turn raw data into useful information. I love using modern tools and techniques to help businesses make smart decisions based on data. I'm always eager to learn and ready for new challenges.</p>
+        </section>
 
-        <h2>Skills & Expertise</h2>
-        <ul class="skills-list">
-            <li>Web Scraping</li>
-            <li>Python (BeautifulSoup, Selenium)</li>
-            <li>Data Extraction</li>
-            <li>Data Automation</li>
-            <li>Data Cleaning</li>
-            <li>Microsoft Excel</li>
-            <li>Data Mining</li>
-        </ul>
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Web Scraping</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">BeautifulSoup</div>
+                <div class="skill-item">Selenium</div>
+                <div class="skill-item">Data Extraction</div>
+                <div class="skill-item">Data Cleaning</div>
+                <div class="skill-item">Data Automation</div>
+                <div class="skill-item">MS Excel</div>
+                <div class="skill-item">Data Mining</div>
+            </div>
+        </section>
 
-        <h2>Featured Projects</h2>
-        <div class="project-card">
-            <h3>E-commerce Data Scraper</h3>
-            <p>Developed a custom Python script to extract product names, prices, ratings, and stock levels from large e-commerce platforms, exporting 50,000+ clean leads into Excel.</p>
-        </div>
-        <div class="project-card">
-            <h3>Real Estate Lead Extraction</h3>
-            <p>Automated the data collection process from property directory websites, bypassing complex structures to generate structured CSV databases for clients.</p>
-        </div>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of the project. Tell people what you did and what tools you used.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p>Describe your other project. What problem did you solve?</p>
+                </div>
+            </div>
+        </section>
 
-        <h2>Contact</h2>
-        <p>Looking for custom data extraction or web automation solutions? Let's connect on Fiverr!</p>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me! You can find me on Fiverr.</p>
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Tahsin Ahmed. All Rights Reserved.</p>
+        <p>&copy; 2026 Tahsin Ahmed. Built with love by AI.</p>
     </footer>
 
 </body>
